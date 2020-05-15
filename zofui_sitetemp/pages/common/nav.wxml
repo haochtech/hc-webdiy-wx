@@ -1,0 +1,15 @@
+<view class="temp_nav mt10" wx:if="{{tasksort.length>0}}">
+    <swiper autoplay="{{false}}" bindchange="sortNavChange" duration="500" indicatorDots="{{false}}" style="height:{{sortNavHeight}}">
+        <swiper-item wx:for="{{tasksort}}" wx:for-item="i">
+            <view class="item_cell_box temp_nav_box">
+                <view class="temp_nav_item" wx:for="{{i}}" wx:for-item="j">
+                    <image src="{{j.img}}"></image>
+                    <view class="temp_nav_name">{{j.name}}</view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="tamp_nav_pointer">
+        <text class="tamp_nav_pointeritem {{navindex==index?'tamp_nav_actpointe':''}}" wx:for="{{tasksort}}"></text>
+    </view>
+</view>
